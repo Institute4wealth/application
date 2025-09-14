@@ -10,18 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body, html {
-            min-height: 100%;
+            height: 100vh; /* Set a fixed height to prevent main page scrolling */
+            width: 100%;
             margin: 0;
             font-family: 'Exo 2', sans-serif;
             text-transform: uppercase;
             color: #fff;
-            /* Allow the page to scroll naturally */
             background: linear-gradient(-45deg, #0a0a0a, #004d00, #0a0a0a, #004d00, #0a0a0a, #004d00);
             background-size: 600% 600%;
             animation: randomizedGradient 25s ease infinite;
-            padding: 2rem 0; /* Add vertical padding for spacing */
             display: flex;
             justify-content: center;
+            align-items: center; /* Center the box in the middle of the screen */
+            overflow: hidden; /* Hide the main page scrollbar */
         }
 
         @keyframes randomizedGradient {
@@ -35,7 +36,8 @@
         .glass-box {
             width: 90vw;
             max-width: 600px;
-            padding: 2rem;
+            /* Adjust padding to make space for the scrollbar on smaller screens */
+            padding: 2rem 1.5rem;
             background: rgba(255, 255, 255, 0.08);
             border-radius: 20px;
             backdrop-filter: blur(15px);
@@ -43,15 +45,16 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             z-index: 20;
             animation: elementGlowPulse 2s ease-in-out infinite;
-            /* Remove fixed height and overflow property */
-            height: auto;
-            overflow: visible;
+
+            /* Make the box scrollable on its own */
+            height: 95vh;
+            overflow-y: auto;
+            /* Use flexbox to align content to the top */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         @keyframes elementGlowPulse {
@@ -86,10 +89,10 @@
             height: 150px;
             perspective: 1000px;
             position: absolute;
-            top: 1rem; /* Positioned slightly above the content */
+            top: 0; /* Positioned at the very top of the glass-box */
             left: 50%;
             transform: translateX(-50%); /* Centered horizontally */
-            z-index: 10; /* Lower z-index to be behind the text */
+            z-index: -1; /* Place behind the text */
         }
 
         .prism {
@@ -203,7 +206,7 @@
 
         <div class="form-content">
             <h1 class="pulsating-green-glow" style="font-size: 2.5em; margin-bottom: 1rem;">INSTITUTE4WEALTH</h1>
-            <p class="pulsating-green-glow" style="font-size: 1.2em; margin-top: 1rem; margin-bottom: 1rem;">"YOU DON’T ATTRACT WHAT YOU WANT, YOU ATTRACT WHAT YOU ARE." - MG</p>
+            <p class="pulsating-green-glow" style="font-size: 1.2em; margin-top: 1rem; margin-bottom: 1rem;">"YOU DON’T ATTRACT WHAT YOU WANT, YOU ATTRACT WHAT YOU ARE." - MYRON GOLDEN</p>
             <p class="pulsating-green-glow" style="font-size: 1.8em; margin-bottom: 0.5rem;">JOIN OUR TEAM</p>
             <p class="pulsating-green-glow" style="font-size: 1.6em; margin-bottom: 1rem;">INSURANCE AGENT</p>
             <p class="pulsating-green-glow" style="font-size: 1em; margin-bottom: 2rem;">DO NOT NEED TO BE AN EXPERT IN FINANCIAL SERVICES. NO EXPERIENCE REQUIRED. WE WILL PROVIDE ALL TRAINING. MUST BE HARD WORKING, WILLING TO LEARN, AND AMBITIOUS.</p>
@@ -233,6 +236,8 @@
 
                 <label for="resume" style="display: block; text-align: left; margin-bottom: 0.5rem;" class="pulsating-green-glow">UPLOAD RESUME/CV</label>
                 <input type="file" id="resume" name="attachment" accept=".pdf, .doc, .docx" class="form-file">
+
+                <p class="pulsating-green-glow" style="font-size: 1.2em; margin-top: 1rem; margin-bottom: 1rem;">"YOUR JOB WAS NOT CREATED TO PAY YOU WHAT YOU ARE WORTH. IT WAS CREATED TO PAY YOU WHAT THE JOB IS WORTH." - MYRON GOLDEN</p>
 
                 <button type="submit" class="submit-button">SUBMIT APPLICATION</button>
             </form>
