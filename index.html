@@ -1,250 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katie's Application Form</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            height: 100vh;
-            width: 100%;
-            margin: 0;
-            font-family: 'Exo 2', sans-serif;
-            text-transform: uppercase;
-            color: #fff;
-            background: linear-gradient(-45deg, #0a0a0a, #004d00, #0a0a0a, #004d00, #0a0a0a, #004d00);
-            background-size: 600% 600%;
-            animation: randomizedGradient 25s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katie's Application Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100vh; /* Set a fixed height to prevent main page scrolling */
+            width: 100%;
+            margin: 0;
+            font-family: 'Exo 2', sans-serif;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(-45deg, #0a0a0a, #004d00, #0a0a0a, #004d00, #0a0a0a, #004d00);
+            background-size: 600% 600%;
+            animation: randomizedGradient 25s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center the box in the middle of the screen */
+            overflow: hidden; /* Hide the main page scrollbar */
+        }
 
-        @keyframes randomizedGradient {
-            0% { background-position: 0% 50%; }
-            25% { background-position: 50% 100%; }
-            50% { background-position: 100% 50%; }
-            75% { background-position: 50% 0%; }
-            100% { background-position: 0% 50%; }
-        }
+        @keyframes randomizedGradient {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 50% 100%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 50% 0%; }
+            100% { background-position: 0% 50%; }
+        }
 
-        .glass-box {
-            width: 90vw;
-            max-width: 600px;
-            padding: 2rem 1.5rem;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            position: relative;
-            z-index: 20;
-            animation: elementGlowPulse 2s ease-in-out infinite;
-            height: 95vh;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        .glass-box {
+            width: 90vw;
+            max-width: 600px;
+            /* Adjust padding to make space for the scrollbar on smaller screens */
+            padding: 2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            position: relative;
+            z-index: 20;
+            animation: elementGlowPulse 2s ease-in-out infinite;
 
-        @keyframes elementGlowPulse {
-            0%, 100% {
-                box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
-            }
-            50% {
-                box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-            }
-        }
+            /* Make the box scrollable on its own */
+            height: 95vh;
+            overflow-y: auto;
+            /* Use flexbox to align content to the top */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-        .generative-pattern {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background-image:
-                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 5%),
-                radial-gradient(circle at 80% 90%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 7%),
-                radial-gradient(circle at 30% 70%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 4%),
-                linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 10%);
-            background-size: 50px 50px, 70px 70px, 40px 40px, 100% 100%;
-            animation: patternMove 60s linear infinite;
-        }
+        @keyframes elementGlowPulse {
+            0%, 100% {
+                box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+            }
+            50% {
+                box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+            }
+        }
 
-        @keyframes patternMove {
-            from { transform: translate(0, 0); }
-            to { transform: translate(-50%, -50%); }
-        }
+        .generative-pattern {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 5%),
+                radial-gradient(circle at 80% 90%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0) 7%),
+                radial-gradient(circle at 30% 70%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 4%),
+                linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 10%);
+            background-size: 50px 50px, 70px 70px, 40px 40px, 100% 100%;
+            animation: patternMove 60s linear infinite;
+        }
 
-        .prism-container {
-            width: 150px;
-            height: 150px;
-            perspective: 1000px;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: -1;
-        }
+        @keyframes patternMove {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-50%, -50%); }
+        }
 
-        .prism {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: rotatePrism 20s infinite linear;
-        }
+        .prism-container {
+            width: 150px;
+            height: 150px;
+            perspective: 1000px;
+            position: absolute;
+            top: 0; /* Positioned at the very top of the glass-box */
+            left: 50%;
+            transform: translateX(-50%); /* Centered horizontally */
+            z-index: -1; /* Place behind the text */
+        }
 
-        .prism-face {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background-color: rgba(0, 100, 0, 0.3);
-            border: 1px solid rgba(0, 150, 0, 0.5);
-        }
+        .prism {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotatePrism 20s infinite linear;
+        }
 
-        .prism-face:nth-child(1) { transform: rotateY(0deg) translateZ(75px); }
-        .prism-face:nth-child(2) { transform: rotateY(90deg) translateZ(75px); }
-        .prism-face:nth-child(3) { transform: rotateY(180deg) translateZ(75px); }
-        .prism-face:nth-child(4) { transform: rotateY(-90deg) translateZ(75px); }
-        .prism-face:nth-child(5) { transform: rotateX(90deg) translateZ(75px); }
-        .prism-face:nth-child(6) { transform: rotateX(-90deg) translateZ(75px); }
+        .prism-face {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0, 100, 0, 0.3); /* Darker green */
+            border: 1px solid rgba(0, 150, 0, 0.5); /* Darker green */
+        }
 
-        @keyframes rotatePrism {
-            from { transform: rotateY(0deg) rotateX(0deg); }
-            to { transform: rotateY(360deg) rotateX(360deg); }
-        }
+        .prism-face:nth-child(1) { transform: rotateY(0deg) translateZ(75px); }
+        .prism-face:nth-child(2) { transform: rotateY(90deg) translateZ(75px); }
+        .prism-face:nth-child(3) { transform: rotateY(180deg) translateZ(75px); }
+        .prism-face:nth-child(4) { transform: rotateY(-90deg) translateZ(75px); }
+        .prism-face:nth-child(5) { transform: rotateX(90deg) translateZ(75px); }
+        .prism-face:nth-child(6) { transform: rotateX(-90deg) translateZ(75px); }
 
-        .pulsating-green-glow {
-            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-            animation: neonGlowPulse 2s ease-in-out infinite, textPulseZ 1.5s ease-in-out infinite;
-        }
+        @keyframes rotatePrism {
+            from { transform: rotateY(0deg) rotateX(0deg); }
+            to { transform: rotateY(360deg) rotateX(360deg); }
+        }
 
-        @keyframes neonGlowPulse {
-            0%, 100% {
-                text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
-            }
-            50% {
-                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-            }
-        }
+        .pulsating-green-glow {
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+            /* Combined animations for glow and pulse */
+            animation: neonGlowPulse 2s ease-in-out infinite, textPulseZ 1.5s ease-in-out infinite;
+        }
 
-        @keyframes textPulseZ {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.03);
-            }
-        }
+        @keyframes neonGlowPulse {
+            0%, 100% {
+                text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+            }
+            50% {
+                text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+            }
+        }
 
-        .form-content {
-            z-index: 30;
-            position: relative;
-            width: 100%;
-            text-align: center;
-        }
+        @keyframes textPulseZ {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
 
-        .form-input, .form-textarea, .form-select, .form-file {
-            /* Reduced width and added margin to center the form inputs */
-            width: 80%;
-            padding: 12px;
-            margin: 0 auto 1rem auto; /* Centers the input horizontally */
-            background-color: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(0, 255, 0, 0.6);
-            border-radius: 8px;
-            color: #fff;
-            outline: none;
-            transition: all 0.3s ease;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            display: block; /* Ensures each input takes up a new line */
-        }
-        .form-input:focus, .form-textarea:focus, .form-select:focus, .form-file:focus {
-            box-shadow: 0 0 10px #00ff00;
-        }
-        .submit-button {
-            padding: 12px 24px;
-            background-color: #00ff00;
-            color: #000;
-            font-weight: bold;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 10px #00ff00;
-            animation: elementGlowPulse 2s ease-in-out infinite;
-        }
-        .submit-button:hover {
-            box-shadow: 0 0 15px #00ff00;
-            transform: scale(1.05);
-        }
-        .file-upload-container {
-            text-align: left;
-            width: 80%; /* Aligns with the other input widths */
-            margin: 0 auto 1rem auto;
-        }
-    </style>
+        /* Form-specific styling to match new aesthetic */
+        .form-content {
+            z-index: 30; /* Higher z-index to be on top */
+            position: relative;
+            width: 100%;
+            text-align: center;
+        }
+        .form-input, .form-textarea, .form-select, .form-file {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            background-color: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 255, 0, 0.6);
+            border-radius: 8px;
+            color: #fff;
+            outline: none;
+            transition: all 0.3s ease;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        .form-input:focus, .form-textarea:focus, .form-select:focus, .form-file:focus {
+            box-shadow: 0 0 10px #00ff00;
+        }
+        .submit-button {
+            padding: 12px 24px;
+            background-color: #00ff00;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px #00ff00;
+            animation: elementGlowPulse 2s ease-in-out infinite;
+        }
+        .submit-button:hover {
+            box-shadow: 0 0 15px #00ff00;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
 
-    <div class="glass-box">
-        <div class="generative-pattern"></div>
-        <div class="prism-container">
-            <div class="prism">
-                <div class="prism-face"></div>
-                <div class="prism-face"></div>
-                <div class="prism-face"></div>
-                <div class="prism-face"></div>
-                <div class="prism-face"></div>
-                <div class="prism-face"></div>
-            </div>
-        </div>
+    <div class="glass-box">
+        <div class="generative-pattern"></div>
+        <div class="prism-container">
+            <div class="prism">
+                <div class="prism-face"></div>
+                <div class="prism-face"></div>
+                <div class="prism-face"></div>
+                <div class="prism-face"></div>
+                <div class="prism-face"></div>
+                <div class="prism-face"></div>
+            </div>
+        </div>
 
-        <div class="form-content">
-            <h1 class="pulsating-green-glow" style="font-size: 2.5em; margin-bottom: 1rem;">INSTITUTE4WEALTH</h1>
-            <p class="pulsating-green-glow" style="font-size: 1.2em; margin-top: 1rem; margin-bottom: 1rem;">"YOU DON’T ATTRACT WHAT YOU WANT, YOU ATTRACT WHAT YOU ARE." - MYRON GOLDEN</p>
-            <p class="pulsating-green-glow" style="font-size: 1.8em; margin-bottom: 0.5rem;">JOIN OUR TEAM</p>
-            <p class="pulsating-green-glow" style="font-size: 1.6em; margin-bottom: 1rem;">INSURANCE AGENT</p>
-            <p class="pulsating-green-glow" style="font-size: 1em; margin-bottom: 2rem;">DO NOT NEED TO BE AN EXPERT IN FINANCIAL SERVICES. NO EXPERIENCE REQUIRED. WE WILL PROVIDE ALL TRAINING. MUST BE HARD WORKING, WILLING TO LEARN, AND AMBITIOUS.</p>
+        <div class="form-content">
+            <h1 class="pulsating-green-glow" style="font-size: 2.5em; margin-bottom: 1rem;">INSTITUTE4WEALTH</h1>
+            <p class="pulsating-green-glow" style="font-size: 1.2em; margin-top: 1rem; margin-bottom: 1rem;">"YOU DON’T ATTRACT WHAT YOU WANT, YOU ATTRACT WHAT YOU ARE." - MYRON GOLDEN</p>
+            <p class="pulsating-green-glow" style="font-size: 1.8em; margin-bottom: 0.5rem;">JOIN OUR TEAM</p>
+            <p class="pulsating-green-glow" style="font-size: 1.6em; margin-bottom: 1rem;">INSURANCE AGENT</p>
+            <p class="pulsating-green-glow" style="font-size: 1em; margin-bottom: 2rem;">DO NOT NEED TO BE AN EXPERT IN FINANCIAL SERVICES. NO EXPERIENCE REQUIRED. WE WILL PROVIDE ALL TRAINING. MUST BE HARD WORKING, WILLING TO LEARN, AND AMBITIOUS.</p>
 
-            <form action="https://formsubmit.co/i4wk8z@gmail.com" method="POST" id="application-form" enctype="multipart/form-data">
-                <input type="text" id="name" name="name" placeholder="FULL NAME" required class="form-input">
-                <input type="email" id="email" name="email" placeholder="EMAIL ADDRESS" required class="form-input">
-                <input type="tel" id="phone" name="phone" placeholder="PHONE NUMBER (OPTIONAL)" class="form-input">
+            <form action="https://formsubmit.co/i4wk8z@gmail.com" method="POST" id="application-form" enctype="multipart/form-data">
+                <input type="text" id="name" name="name" placeholder="FULL NAME" required class="form-input">
+                <input type="email" id="email" name="email" placeholder="EMAIL ADDRESS" required class="form-input">
+                <input type="tel" id="phone" name="phone" placeholder="PHONE NUMBER (OPTIONAL)" class="form-input">
 
-                <input type="url" id="linkedin" name="linkedin" placeholder="LINKEDIN PROFILE URL (OPTIONAL)" class="form-input">
+                <input type="url" id="linkedin" name="linkedin" placeholder="LINKEDIN PROFILE URL (OPTIONAL)" class="form-input">
 
-                <textarea id="previous_experience" name="previous_experience" rows="4" placeholder="DESCRIBE ANY PREVIOUS SALES OR CUSTOMER SERVICE EXPERIENCE." class="form-textarea"></textarea>
+                <textarea id="previous_experience" name="previous_experience" rows="4" placeholder="DESCRIBE ANY PREVIOUS SALES OR CUSTOMER SERVICE EXPERIENCE." class="form-textarea"></textarea>
 
-                <select id="availability" name="availability" class="form-select">
-                    <option value="" disabled selected>AVAILABILITY</option>
-                    <option value="full-time">FULL-TIME</option>
-                    <option value="part-time">PART-TIME</option>
-                </select>
+                <select id="availability" name="availability" class="form-select">
+                    <option value="" disabled selected>AVAILABILITY</option>
+                    <option value="full-time">FULL-TIME</option>
+                    <option value="part-time">PART-TIME</option>
+                </select>
 
-                <input type="text" id="location" name="location" placeholder="CITY, STATE" class="form-input">
+                <input type="text" id="location" name="location" placeholder="CITY, STATE" class="form-input">
 
-                <input type="text" id="referral_source" name="referral_source" placeholder="HOW DID YOU HEAR ABOUT US?" class="form-input">
+                <input type="text" id="referral_source" name="referral_source" placeholder="HOW DID YOU HEAR ABOUT US?" class="form-input">
 
-                <textarea id="future_goals" name="future_goals" rows="4" placeholder="DESCRIBE YOUR FUTURE GOALS AS AN INSURANCE AGENT." class="form-textarea"></textarea>
+                <textarea id="future_goals" name="future_goals" rows="4" placeholder="DESCRIBE YOUR FUTURE GOALS AS AN INSURANCE AGENT." class="form-textarea"></textarea>
 
-                <textarea id="cover_letter" name="cover_letter" rows="6" placeholder="TELL US WHY YOU WERE BORN TO WIN." required class="form-textarea"></textarea>
+                <textarea id="cover_letter" name="cover_letter" rows="6" placeholder="TELL US WHY YOU WERE BORN TO WIN." required class="form-textarea"></textarea>
 
-                <div class="file-upload-container">
-                    <label for="resume" class="pulsating-green-glow">UPLOAD RESUME/CV</label>
-                    <input type="file" id="resume" name="attachment" accept=".pdf, .doc, .docx" class="form-file">
-                </div>
+                <label for="resume" style="display: block; text-align: left; margin-bottom: 0.5rem;" class="pulsating-green-glow">UPLOAD RESUME/CV</label>
+                <input type="file" id="resume" name="attachment" accept=".pdf, .doc, .docx" class="form-file">
 
-                <p class="pulsating-green-glow" style="font-size: 1.2em; margin-top: 1rem; margin-bottom: 1rem;">"YOUR JOB WAS NOT CREATED TO PAY YOU WHAT YOU ARE WORTH. IT WAS CREATED TO PAY YOU WHAT THE JOB IS WORTH." - MYRON GOLDEN</p>
+                <p class="pulsating-green-glow" style="font-size: 1.2em; margin-top: 1rem; margin-bottom: 1rem;">"YOUR JOB WAS NOT CREATED TO PAY YOU WHAT YOU ARE WORTH. IT WAS CREATED TO PAY YOU WHAT THE JOB IS WORTH." - MYRON GOLDEN</p>
 
-                <button type="submit" class="submit-button">SUBMIT APPLICATION</button>
-            </form>
-        </div>
-    </div>
+                <button type="submit" class="submit-button">SUBMIT APPLICATION</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
