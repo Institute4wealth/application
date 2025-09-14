@@ -10,22 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body, html {
-            height: 100%;
+            min-height: 100%;
             margin: 0;
             font-family: 'Exo 2', sans-serif;
             text-transform: uppercase;
             color: #fff;
-            /* Allow vertical scrolling */
-            overflow-y: auto;
-            display: flex;
-            justify-content: center;
-            /* Align content to the top */
-            align-items: flex-start;
+            /* Allow the page to scroll naturally */
             background: linear-gradient(-45deg, #0a0a0a, #004d00, #0a0a0a, #004d00, #0a0a0a, #004d00);
             background-size: 600% 600%;
             animation: randomizedGradient 25s ease infinite;
-            /* Add padding to the top */
-            padding-top: 2rem;
+            padding: 2rem 0; /* Add vertical padding for spacing */
+            display: flex;
+            justify-content: center;
         }
 
         @keyframes randomizedGradient {
@@ -47,14 +43,15 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
             position: relative;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             z-index: 20;
             animation: elementGlowPulse 2s ease-in-out infinite;
-            margin-bottom: 2rem; /* Add margin to the bottom of the box for better scrolling */
+            /* Remove fixed height and overflow property */
+            height: auto;
+            overflow: visible;
         }
 
         @keyframes elementGlowPulse {
@@ -89,8 +86,9 @@
             height: 150px;
             perspective: 1000px;
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 1rem; /* Positioned slightly above the content */
+            left: 50%;
+            transform: translateX(-50%); /* Centered horizontally */
             z-index: 10; /* Lower z-index to be behind the text */
         }
 
@@ -205,7 +203,7 @@
 
         <div class="form-content">
             <h1 class="pulsating-green-glow" style="font-size: 2.5em; margin-bottom: 1rem;">INSTITUTE4WEALTH</h1>
-            <p class="pulsating-green-glow" style="font-size: 1.2em; margin-top: 1rem; margin-bottom: 1rem;">"YOU DON’T ATTRACT WHAT YOU WANT, YOU ATTRACT WHAT YOU ARE." - Myron Golden </p>
+            <p class="pulsating-green-glow" style="font-size: 1.2em; margin-top: 1rem; margin-bottom: 1rem;">"YOU DON’T ATTRACT WHAT YOU WANT, YOU ATTRACT WHAT YOU ARE." - MG</p>
             <p class="pulsating-green-glow" style="font-size: 1.8em; margin-bottom: 0.5rem;">JOIN OUR TEAM</p>
             <p class="pulsating-green-glow" style="font-size: 1.6em; margin-bottom: 1rem;">INSURANCE AGENT</p>
             <p class="pulsating-green-glow" style="font-size: 1em; margin-bottom: 2rem;">DO NOT NEED TO BE AN EXPERT IN FINANCIAL SERVICES. NO EXPERIENCE REQUIRED. WE WILL PROVIDE ALL TRAINING. MUST BE HARD WORKING, WILLING TO LEARN, AND AMBITIOUS.</p>
@@ -238,24 +236,7 @@
 
                 <button type="submit" class="submit-button">SUBMIT APPLICATION</button>
             </form>
-
-            <p class="pulsating-green-glow" style="font-size: 0.9em; margin-top: 1rem;">THANK YOU! YOU WILL HEAR FROM US SOON, WITHIN ONE WEEK.</p>
-            <p class="pulsating-green-glow" style="font-size: 0.9em; margin-top: 0.5rem; font-style: italic;">"YOUR INCOME IS DIRECTLY PROPORTIONATE TO THE AMOUNT OF VALUE YOU BRING TO THE MARKETPLACE." - Myron Golden </p>
-
-            <div id="success-message" style="display: none; margin-top: 1.5rem; color: #00ff00; font-weight: bold; font-size: 1.1em;" class="pulsating-green-glow">
-                THANK YOU! YOUR APPLICATION HAS BEEN SENT. WE'LL BE IN TOUCH SHORTLY.
-            </div>
         </div>
     </div>
-
-    <script>
-        document.getElementById('application-form').addEventListener('submit', function(event) {
-            setTimeout(() => {
-                this.style.display = 'none';
-                document.getElementById('success-message').style.display = 'block';
-            }, 100);
-        });
-    </script>
 </body>
 </html>
-
