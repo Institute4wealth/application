@@ -154,9 +154,11 @@
             text-align: center;
         }
         .form-input, .form-textarea, .form-select, .form-file {
-            width: 100%;
+            /* Adjusted for narrower, centered fit on all screens */
+            width: 90%;
             padding: 12px;
-            margin-bottom: 1rem;
+            margin: 0 auto 1rem auto;
+            box-sizing: border-box; /* Crucial for preventing overflow */
             background-color: rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(0, 255, 0, 0.6);
             border-radius: 8px;
@@ -166,6 +168,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
+            display: block; /* Ensures each input is on its own line */
         }
         .form-input:focus, .form-textarea:focus, .form-select:focus, .form-file:focus {
             box-shadow: 0 0 10px #00ff00;
@@ -185,6 +188,11 @@
         .submit-button:hover {
             box-shadow: 0 0 15px #00ff00;
             transform: scale(1.05);
+        }
+        .file-upload-container {
+            width: 90%; /* Match the width of the inputs */
+            text-align: left;
+            margin: 0 auto 1rem auto;
         }
     </style>
 </head>
@@ -233,8 +241,10 @@
 
                 <textarea id="cover_letter" name="cover_letter" rows="6" placeholder="TELL US WHY YOU WERE BORN TO WIN." required class="form-textarea"></textarea>
 
-                <label for="resume" style="display: block; text-align: left; margin-bottom: 0.5rem;" class="pulsating-green-glow">UPLOAD RESUME/CV</label>
-                <input type="file" id="resume" name="attachment" accept=".pdf, .doc, .docx" class="form-file">
+                <div class="file-upload-container">
+                    <label for="resume" class="pulsating-green-glow">UPLOAD RESUME/CV</label>
+                    <input type="file" id="resume" name="attachment" accept=".pdf, .doc, .docx" class="form-file">
+                </div>
 
                 <p class="pulsating-green-glow" style="font-size: 1.2em; margin-top: 1rem; margin-bottom: 1rem;">"YOUR JOB WAS NOT CREATED TO PAY YOU WHAT YOU ARE WORTH. IT WAS CREATED TO PAY YOU WHAT THE JOB IS WORTH." - MYRON GOLDEN</p>
 
