@@ -141,25 +141,18 @@
             }
         }
 
-        /* Form-specific styling to match new aesthetic */
         .form-content {
             z-index: 30;
             position: relative;
             width: 100%;
             text-align: center;
         }
-        /* New class to center and narrow the form fields */
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* This will center the form elements */
-            width: 100%;
-        }
+
         .form-input, .form-textarea, .form-select, .form-file {
-            /* Adjusted width to make form elements narrower */
-            width: 80%; /* Adjusted from 100% */
+            /* Reduced width and added margin to center the form inputs */
+            width: 80%;
             padding: 12px;
-            margin-bottom: 1rem;
+            margin: 0 auto 1rem auto; /* Centers the input horizontally */
             background-color: rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(0, 255, 0, 0.6);
             border-radius: 8px;
@@ -169,6 +162,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
+            display: block; /* Ensures each input takes up a new line */
         }
         .form-input:focus, .form-textarea:focus, .form-select:focus, .form-file:focus {
             box-shadow: 0 0 10px #00ff00;
@@ -189,10 +183,10 @@
             box-shadow: 0 0 15px #00ff00;
             transform: scale(1.05);
         }
-        .form-group {
-            width: 80%; /* Match the width of the inputs */
+        .file-upload-container {
             text-align: left;
-            margin-bottom: 1rem;
+            width: 80%; /* Aligns with the other input widths */
+            margin: 0 auto 1rem auto;
         }
     </style>
 </head>
@@ -218,7 +212,7 @@
             <p class="pulsating-green-glow" style="font-size: 1.6em; margin-bottom: 1rem;">INSURANCE AGENT</p>
             <p class="pulsating-green-glow" style="font-size: 1em; margin-bottom: 2rem;">DO NOT NEED TO BE AN EXPERT IN FINANCIAL SERVICES. NO EXPERIENCE REQUIRED. WE WILL PROVIDE ALL TRAINING. MUST BE HARD WORKING, WILLING TO LEARN, AND AMBITIOUS.</p>
 
-            <form action="https://formsubmit.co/i4wk8z@gmail.com" method="POST" id="application-form" enctype="multipart/form-data" class="form-container">
+            <form action="https://formsubmit.co/i4wk8z@gmail.com" method="POST" id="application-form" enctype="multipart/form-data">
                 <input type="text" id="name" name="name" placeholder="FULL NAME" required class="form-input">
                 <input type="email" id="email" name="email" placeholder="EMAIL ADDRESS" required class="form-input">
                 <input type="tel" id="phone" name="phone" placeholder="PHONE NUMBER (OPTIONAL)" class="form-input">
@@ -241,7 +235,7 @@
 
                 <textarea id="cover_letter" name="cover_letter" rows="6" placeholder="TELL US WHY YOU WERE BORN TO WIN." required class="form-textarea"></textarea>
 
-                                <div class="form-group">
+                <div class="file-upload-container">
                     <label for="resume" class="pulsating-green-glow">UPLOAD RESUME/CV</label>
                     <input type="file" id="resume" name="attachment" accept=".pdf, .doc, .docx" class="form-file">
                 </div>
